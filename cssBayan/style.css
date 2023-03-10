@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion {
+    width: clamp(15rem, 60%, 30rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion__title {
+    color: rgba(60, 87, 186, 0.866);
+    font-size: 2rem;
+}
+
+.accordion-box {
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    border: 0.05rem solid rgb(241, 236, 236);
+}
+
+.accordion-box__input {
+    display: none;
+}
+
+.accordion-box__label,
+.accordion-box__img {
+    padding: 1rem;
+}
+
+.accordion-box__label {
+    display: block;
+}
+
+.accordion-box__label {
+    display: block;
+    color: #000;
+    background: #8eced2;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion-box__label:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion-box__icon {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    transition: all 0.4s ease;
+}
+
+.accordion-box__icon i {
+    font-size: 1rem;
+}
+
+.accordion-box__content {
+    background: #ffffff;
+    display: none;
+}
+
+/* arrow appears when hover accordion */
+.accordion:hover .accordion-box__icon {
+    opacity: 1;
+}
+
+.accordion-box__input:checked~.accordion-box__content {
+    display: block;
+}
+.accordion-box__input:hover~.accordion-box__content {
+    display: block;
+}
+
+.accordion-box__input:checked~*>.accordion-box__icon {
+    transform: translateY(-50%) rotate(180deg);
+}

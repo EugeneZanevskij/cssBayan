@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Accordion</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="accordion">
+            <h1 class="accordion__title">CSS Bayan</h1>
+            <div class="accordion-box">
+                <input type="radio" class="accordion-box__input" id="accordion1" name="accordion" value="accordion1" checked>
+                <label for="accordion1" class="accordion-box__label">Open me<span class="accordion-box__icon"><i class="fa-solid fa-angle-down"></i></span></label>
+                <div class="accordion-box__content">
+                    Im here
+                </div>
+            </div>
+            <div class="accordion-box">
+                <input type="radio" class="accordion-box__input" id="accordion2" name="accordion" value="accordion2">
+                <label for="accordion2" class="accordion-box__label">Open me<span class="accordion-box__icon"><i class="fa-solid fa-angle-down"></i></span></label>
+                <div class="accordion-box__content">
+                    Im here
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
