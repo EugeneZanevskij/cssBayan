@@ -1,8 +1,15 @@
 .container {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: rgb(231, 239, 211);
+}
+
+.container__title {
+    color: rgba(60, 87, 186, 0.866);
+    font-size: 2rem;
 }
 
 .accordion {
@@ -12,17 +19,14 @@
     gap: 1rem;
 }
 
-.accordion__title {
-    color: rgba(60, 87, 186, 0.866);
-    font-size: 2rem;
-}
-
 .accordion-box {
     box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,0.2);
     border-radius: 0.5rem;
     cursor: pointer;
     transition: all 0.5s;
-    border: 0.05rem solid rgb(241, 236, 236);
+    border: 0.0625rem solid #8c8c4d;
+    overflow: hidden;
+
 }
 
 .accordion-box__input {
@@ -36,15 +40,15 @@
 
 .accordion-box__label {
     display: block;
-}
-
-.accordion-box__label {
-    display: block;
-    color: #000;
-    background: #8eced2;
+    color:#3746ba;
+    font-size: 1.25rem;
+    font-weight: 700;
+    /* background: #8eced2; */
     cursor: pointer;
     position: relative;
 }
+
+
 
 .accordion-box__label:hover {
     background: rgba(0, 0, 0, 0.1);
@@ -64,7 +68,6 @@
 }
 
 .accordion-box__content {
-    background: #ffffff;
     display: none;
 }
 
@@ -72,14 +75,44 @@
 .accordion:hover .accordion-box__icon {
     opacity: 1;
 }
+.accordion:hover .accordion-box__label {
+    color: #000;
+}
 
 .accordion-box__input:checked~.accordion-box__content {
     display: block;
 }
-.accordion-box__input:hover~.accordion-box__content {
+.accordion-box:hover .accordion-box__content {
     display: block;
 }
 
+.accordion-box:hover .accordion-box__icon {
+    transform: translateY(-50%) rotate(180deg);
+}
 .accordion-box__input:checked~*>.accordion-box__icon {
     transform: translateY(-50%) rotate(180deg);
+}
+
+
+.accordion-box__input:hover~.accordion-box__img {
+    animation: memeShow 1s ease-in-out;
+}
+
+/* .img1 {
+    background: url(./assets/accordion1.png);
+} */
+.accordion-box__img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    animation: memeShow 1s ease-in-out;
+}
+
+@keyframes memeShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
