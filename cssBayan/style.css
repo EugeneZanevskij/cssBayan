@@ -58,10 +58,6 @@
     color: rgb(0, 0, 0);
 }
 
-/* icon rotates when hover or checked */
-.accordion-box:hover .accordion-box__icon {
-    transform: translateY(-50%) rotate(180deg);
-}
 .accordion-box__input:checked~*>.accordion-box__icon {
     transform: translateY(-50%) rotate(180deg);
 }
@@ -73,12 +69,6 @@
     max-height: 0;
     transition: max-height 0.5s ease;
     margin-bottom: 1rem;
-}
-
-/* img animation */
-.accordion-box:hover .accordion-box__img {
-    max-height: 20rem;
-    transition: max-height 0.5s ease;
 }
 
 .accordion-box__input:checked~.accordion-box__img {
@@ -101,6 +91,24 @@
 
     .accordion:hover .accordion-box__label {
         color: rgb(0, 0, 0);
+    }
+
+    .accordion-box:hover .accordion-box__img {
+        max-height: 20rem;
+        transition: max-height 0.5s ease;
+    }
+    
+    .accordion-box:hover .accordion-box__icon {
+        transform: translateY(-50%) rotate(180deg);
+    }
+    
+    .accordion-box:active {
+        color: #3746ba;
+        background-color: #b1b18f;
+    }
+    
+    .accordion-box:active .accordion-box__img {
+        opacity: 0.5;
     }
 }
 
