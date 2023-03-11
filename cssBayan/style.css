@@ -22,7 +22,7 @@
 }
 
 .accordion-box {
-    box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,0.2);
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
     cursor: pointer;
     transition: all 0.5s;
@@ -34,18 +34,18 @@
 }
 
 .accordion-box__label {
-    color:#3746ba;
+    color: #3746ba;
     font-size: 1em;
     font-weight: 700;
     position: relative;
-    margin: 1rem 0 0 1rem;
+    margin: 1rem 1rem 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .accordion-box__icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 1rem;
+    display: flex;
+    align-items: center;
     transition: all 0.4s ease;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .accordion-box__input:checked~*>.accordion-box__icon {
-    transform: translateY(-50%) rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .accordion-box__img {
@@ -75,6 +75,7 @@
     max-height: 20rem;
     transition: max-height 0.5s ease;
 }
+
 @media screen and (width > 60rem) {
     body {
         font-size: 2rem;
@@ -84,7 +85,7 @@
     .accordion-box__icon {
         opacity: 0;
     }
-    
+
     .accordion:hover .accordion-box__icon {
         opacity: 1;
     }
@@ -97,20 +98,20 @@
         max-height: 20rem;
         transition: max-height 0.5s ease;
     }
-    
+
     .accordion-box:hover .accordion-box__icon {
-        transform: translateY(-50%) rotate(180deg);
+        transform: rotate(180deg);
     }
-    
+
     .accordion-box:active {
         color: #3746ba;
         background-color: #b1b18f;
     }
-    
+
     .accordion-box:active .accordion-box__label {
         color: #3746ba;
     }
-    
+
     .accordion-box:active .accordion-box__img {
         opacity: 0.5;
     }
