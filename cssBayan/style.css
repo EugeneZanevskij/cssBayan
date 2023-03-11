@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@700&family=Sono:wght@700&display=swap');
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 239, 211);
+}
+
+.container__title {
+    color: rgba(60, 87, 186, 0.866);
+    font-size: 1.25em;
+}
+
+.accordion {
+    width: clamp(15rem, 60%, 30rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion-box {
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    border: 0.0625rem solid #8c8c4d;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.accordion-box__label {
+    color: #3746ba;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 1rem 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-box__icon {
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.accordion-box__icon i {
+    font-size: 1rem;
+}
+
+/* label is black when checked */
+.accordion-box__input:checked~.accordion-box__label {
+    color: rgb(0, 0, 0);
+}
+
+.accordion-box__input:checked~*>.accordion-box__icon {
+    transform: rotate(180deg);
+}
+
+.accordion-box__img {
+    display: flex;
+    justify-content: center;
+    object-fit: contain;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    margin-bottom: 1rem;
+}
+
+.accordion-box__input:checked~.accordion-box__img {
+    max-height: 20rem;
+    transition: max-height 0.5s ease;
+}
+
+@media screen and (width > 60rem) {
+    body {
+        font-size: 2rem;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    body {
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+@media screen and (max-width: 35rem) {
+    body {
+        font-size: 1rem;
+        font-family: 'Sono', sans-serif;
+    }
+}
+
+@media (hover: hover) {
+    .accordion-box__icon {
+        opacity: 0;
+    }
+
+    .accordion:hover .accordion-box__icon {
+        opacity: 1;
+    }
+
+    .accordion:hover .accordion-box__label {
+        color: rgb(0, 0, 0);
+    }
+
+    .accordion-box:hover .accordion-box__img {
+        max-height: 20rem;
+        transition: max-height 0.5s ease;
+    }
+
+    .accordion-box:hover .accordion-box__icon {
+        transform: rotate(180deg);
+    }
+
+    .accordion-box:active {
+        color: #3746ba;
+        background-color: #b1b18f;
+    }
+
+    .accordion-box:active .accordion-box__label {
+        color: #3746ba;
+    }
+
+    .accordion-box:active .accordion-box__img {
+        opacity: 0.5;
+    }
+}
