@@ -65,8 +65,21 @@
 }
 
 .accordion-box__img {
-    width: 100%;
-    aspect-ratio: 4/3;
+    display: flex;
+    justify-content: center;
     object-fit: contain;
-    animation: memeShow 1s ease-in-out;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    margin-bottom: 1rem;
+}
+
+/* img animation */
+.accordion-box:hover .accordion-box__img {
+    max-height: 20rem;
+    transition: max-height 0.5s ease;
+}
+
+.accordion-box__input:checked~.accordion-box__img {
+    max-height: 20rem;
+    transition: max-height 0.5s ease;
 }
