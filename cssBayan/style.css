@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@700&family=Sono:wght@700&display=swap');
+
 .container {
     display: flex;
     flex-direction: column;
@@ -9,7 +11,7 @@
 
 .container__title {
     color: rgba(60, 87, 186, 0.866);
-    font-size: 2rem;
+    font-size: 1.25em;
 }
 
 .accordion {
@@ -33,7 +35,7 @@
 
 .accordion-box__label {
     color:#3746ba;
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: 700;
     position: relative;
     margin: 1rem 0 0 1rem;
@@ -82,4 +84,36 @@
 .accordion-box__input:checked~.accordion-box__img {
     max-height: 20rem;
     transition: max-height 0.5s ease;
+}
+@media screen and (width > 60rem) {
+    body {
+        font-size: 2rem;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .accordion-box__icon {
+        opacity: 0;
+    }
+    
+    .accordion:hover .accordion-box__icon {
+        opacity: 1;
+    }
+
+    .accordion:hover .accordion-box__label {
+        color: rgb(0, 0, 0);
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    body {
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+@media screen and (max-width: 35rem) {
+    body {
+        font-size: 1rem;
+        font-family: 'Sono', sans-serif;
+    }
 }
